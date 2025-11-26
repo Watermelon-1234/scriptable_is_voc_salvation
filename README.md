@@ -43,6 +43,7 @@ To store wrong answers on GitHub and iCloud, follow these steps:
 2. Generate a GitHub Personal Access Token (PAT) with `content`'s read and write permissions.
 3. In `add_voc_by_url.js`, set `let UPLOAD_TO_GITHUB = 1` and replace the placeholder values for `your_github_token`, `your_github_repo` with your the generated PAT, and repository name respectively.
 4. The wrong answers will now be stored in your GitHub repository (voc branch) as well as iCloud.
+5. To automately merge daily updates from `auto-update` branch to `main` and `voc` branches, give permission to GitHub Actions `repo → Settings → Actions → General → Workflow permissions → Read and write permissions` in your forked repository.
  
 - extra note: Be cautious about exposing your GitHub token, as it grants access to your repository.
 
