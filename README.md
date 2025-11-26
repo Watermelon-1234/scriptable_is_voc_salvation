@@ -9,7 +9,7 @@ This project is an iOS vocabulary quiz system that uses **Scriptable** and **Sho
 - Fetches a large number of words daily from a Google Sheet or API (default 500 words)  
 - Randomly picks wrong answers for review (default 30% probability)  
 - Generates multiple-choice questions in Scriptable  
-- Records wrong answers in JSON files in either iCloud or GitHub
+- Records wrong answers in JSON files in either **iCloud** or **GitHub**
 - Fully compatible with iOS Shortcuts for displaying questions and choosing answers  
 
 ---
@@ -36,6 +36,15 @@ This project is an iOS vocabulary quiz system that uses **Scriptable** and **Sho
    1. e.g., set it to run every time you open a specific app like Instagram or games.
    ![alt text](readme_assets/image-3.png)
 
+## Github Integration (Optional)
+Since my iCloud storage is almost full, I implemented an option to store wrong answers on GitHub.
+To store wrong answers on GitHub and iCloud, follow these steps:
+1. Fork this repository to your own GitHub account.
+2. Generate a GitHub Personal Access Token (PAT) with `content`'s read and write permissions.
+3. In `add_voc_by_url.js`, set `let UPLOAD_TO_GITHUB = 1` and replace the placeholder values for `your_github_token`, `your_github_repo` with your the generated PAT, and repository name respectively.
+4. The wrong answers will now be stored in your GitHub repository (voc branch) as well as iCloud.
+ 
+- extra note: Be cautious about exposing your GitHub token, as it grants access to your repository.
 
 
 
