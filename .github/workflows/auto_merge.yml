@@ -24,6 +24,13 @@ jobs:
       - name: Squash merge to voc
         run: |
           git checkout voc
-          git merge --squash auto-update
-          git commit -m "Daily update from auto-update branch"
+
+          # merge but don't fail action
+          git merge --squash auto-update || true
+
+          # If wrong_words.json conflicts, use auto-update version
+          git checkout --theirs wrong_words.json || true
+          git add wrong_words.json || true
+
+          git commit -m "Daily update from auto-update branch" || true
           git push origin voc
